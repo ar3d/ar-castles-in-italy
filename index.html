@@ -11,15 +11,18 @@
     <script type='text/javascript' src='build/aframe-ar-nft.js'></script>
     
     <script src="index.js"></script>
-    <link rel="stylesheet" type="text/css" href="index.css"/>
+    
 </head>
+<link rel="stylesheet" type="text/css" href="index.css">
 
 <body style='margin: 0; overflow: hidden;'>
     <a-scene
-        vr-mode-ui='enabled: false'
-        embedded
-        arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-    <a-camera gps-camera rotation-reader></a-camera>
-</a-scene>
-</div>
+        cursor='rayOrigin: mouse; fuse: true; fuseTimeout: 0;'
+        raycaster="objects: [gps-entity-place];"
+        vr-mode-ui="enabled: false"
+        arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false;'>
+
+        <a-camera gps-camera rotation-reader>
+        </a-camera>
+    </a-scene>
 </body>
